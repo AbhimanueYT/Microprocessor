@@ -11,7 +11,7 @@ data segment
 	m1 db 10,13,"Enter string :$"
 	m2 db 10,13,"Select string :$"
 	m3 db 10,13,"Enter new string :$"
-	r db 10,13,"Result $"
+	r db 10,13,"Result :$"
 data ends
 
 code segment
@@ -98,20 +98,18 @@ exit:	test ch,ch
 	mov ah,4ch
 	int 21h
 place:	lea di,st3
-	cmp byte ptr[di],'$'
-	je pl1
+pla1:	cmp byte ptr[di],'$'
+	je cont
 	inc di
-	loop place
+	jmp pla1
+cont:	dec di
 	mov cl,bl
-pl1:	dec di
-	pop si
+pl1:	pop si
 	mov al,[di]
 	mov [si],al
+	dec di
 	loop pl1
-print:	mov dl,10
-	mov ah,02h
-	int 21h
-	lea dx,st1
+print:	lea dx,st1
 	mov ah,09h
 	int 21h
 	mov ah,4ch
