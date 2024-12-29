@@ -1,0 +1,19 @@
+      lxi h,0x0400
+      mov b,m
+      dcr b
+  l2: mov c,b
+      inx h
+  l1: mov a,m
+      inx h
+      mov d,m
+      cmp d
+      jc next
+      mov m,a
+      dcx h
+      mov m,d
+      inx h
+next: dcr c
+      jnz l1
+      dcr b
+      jnz l2
+      hlt
