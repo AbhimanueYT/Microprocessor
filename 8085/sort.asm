@@ -1,8 +1,11 @@
-      lxi h,0x0400
+      lxi h,0x0400h
       mov b,m
       dcr b
-  l2: mov c,b
+      mov c,b
       inx h
+      mov e,l
+  l2: mov c,b
+      mov l,e
   l1: mov a,m
       inx h
       mov d,m
