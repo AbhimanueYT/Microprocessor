@@ -49,7 +49,7 @@ The **8085 Microprocessor LC LCD Trainer** simplifies learning by providing a ha
 
 
 
-#### 8086 MASM DOSBox
+### 8086 MASM DOSBox
 
 ### 1. **8086 Architecture Overview**
 The 8086 is a 16-bit microprocessor designed by Intel. It has a segmented memory architecture, supports registers like AX, BX, CX, DX, and uses instructions optimized for low-level control of hardware. Programming it involves detailed management of CPU instructions and memory addressing.
